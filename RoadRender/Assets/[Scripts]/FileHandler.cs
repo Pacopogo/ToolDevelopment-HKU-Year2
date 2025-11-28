@@ -1,29 +1,82 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
 /// This script is to read and write files
+/// 
+/// NOTE:
+/// - Need to add overwriteable saves
 /// 
 /// I followed this script along form a youtube tutorial
 /// https://www.youtube.com/watch?v=KZft1p8t2lQ
 /// </summary>
 public static class FileHandler
 {
-    public static void Save<T>(List<T> SaveData, string filename)
+    #region List Version
+    public static void SaveList<T>(List<T> SaveData, string filename)
     {
         Debug.Log(GetPath(filename));
         string jsonData = JsonHelper.ToJson<T>(SaveData.ToArray());
         WriteSave(GetPath(filename), jsonData);
     }
 
-    public static void Load() 
+    public static List<T> LoadListJson<T>(string filename) 
     {
+        string jsonData = LoadData(GetPath(filename));
 
+        if(string.IsNullOrEmpty(jsonData) || jsonData == "{}")
+        {
+            return new List<T>();
+        }
+
+        List<T> res = JsonHelper.FromJson<T>(jsonData).ToList();
+
+        return res;
+    }
+    #endregion
+
+    public static void Save<T>(T SaveData, string filename)
+    {
+        Debug.Log(GetPath(filename));
+        string jsonData = JsonUtility.ToJson(SaveData);
+        WriteSave(GetPath(filename), jsonData);
     }
 
-    private static string GetPath(string filename)
+    public static T LoadJson<T>(string filename)
+    {
+        string jsonData = LoadData(GetPath(filename));
+
+        if (string.IsNullOrEmpty(jsonData) || jsonData == "{}")
+        {
+            Debug.Log("Default");
+            return default(T);
+        }
+
+        T res = JsonUtility.FromJson<T>(jsonData);
+
+        return res;
+    }
+
+    private static string LoadData(string path)
+    {
+        if (File.Exists(path))
+        {
+            Debug.Log("Start Reading:\n" + path);
+            using(StreamReader sr = new StreamReader(path))
+            {
+                string content = sr.ReadToEnd();
+                return content;
+            }
+        }
+
+        Debug.LogError("File does not exists" + "\nPath:" + path);
+        return "";
+    }
+
+    public static string GetPath(string filename)
     {
         return Application.persistentDataPath + "/" + filename; 
     }

@@ -1,12 +1,9 @@
 using System.Collections.Generic;
 using TMPro;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 /// <summary>
-/// This class is to Set all the variables from the Creator menu to the MetaData
+/// This script is to manage the set data from the UI to a save file
 /// </summary>
 public class ProjectCreator : MonoBehaviour
 {
@@ -15,8 +12,12 @@ public class ProjectCreator : MonoBehaviour
     [SerializeField] private TMP_Text descriptionField;
     [SerializeField] private TMP_Text debugNumb;
 
+    [Header("Project Options")]
+    [SerializeField] private TMP_Dropdown dropDown;
+    private TMP_Dropdown.OptionData optionData = new TMP_Dropdown.OptionData();
+
     private List<ProjectData> projectDataList = new List<ProjectData>();
-    private ProjectData currentData = new ProjectData("","");
+    private ProjectData currentData = new ProjectData();
 
     public void SetNameData()
     {
@@ -37,6 +38,10 @@ public class ProjectCreator : MonoBehaviour
     public void CreateNewSave()
     {
         projectDataList.Add(currentData);
-        FileHandler.Save<ProjectData>(projectDataList, currentData.Name);
+        FileHandler.SaveList<ProjectData>(projectDataList, currentData.Name);
+
+        optionData.text = currentData.Name;
+
+        dropDown.options.Add(optionData);
     }
 }
