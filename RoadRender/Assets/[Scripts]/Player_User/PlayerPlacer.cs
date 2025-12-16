@@ -18,9 +18,9 @@ public class PlayerPlacer : MonoBehaviour
             {
                 GameObject gameObj = hit.collider.gameObject;
 
-                if (gameObj.GetComponent<Placer>() != null)
+                if (gameObj.GetComponent<DirectionLogic>() != null)
                 {
-                    gameObj.GetComponent<Placer>().Place();
+                    gameObj.GetComponent<DirectionLogic>().Place();
                 }
             }
 

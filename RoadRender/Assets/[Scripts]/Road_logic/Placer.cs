@@ -3,7 +3,6 @@ using UnityEngine;
 public class Placer : MonoBehaviour, IPlaceable
 {
     [Header("Component")]
-    [SerializeField] private GameObject PlacerObj;
     [SerializeField] private GameObject PlacePoint;
 
     [Header("Objects")]
@@ -29,6 +28,5 @@ public class Placer : MonoBehaviour, IPlaceable
 
         placeObj.transform.rotation = PlacePoint.transform.rotation;
 
-        PlacerObj.SetActive(false);
     }
 }

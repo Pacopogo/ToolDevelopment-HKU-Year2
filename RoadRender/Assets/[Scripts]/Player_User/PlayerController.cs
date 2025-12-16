@@ -9,13 +9,11 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float m_MouseSensitivity = 6f;
     [SerializeField] private float m_Speed = 6f;
-    private float m_BaseSpeed = 8f;
 
     private Vector2 m_Direction;
     private float m_YDiretion;
     private Vector2 m_MouseDirection;
 
-    private bool m_IsMoving;
 
     private void Start()
     {
