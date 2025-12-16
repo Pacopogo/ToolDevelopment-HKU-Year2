@@ -22,6 +22,8 @@ public class DirectionLogic : MonoBehaviour, IPlaceable
         obj.transform.position = m_PlacePoint.position;
         obj.transform.rotation = m_PlacePoint.rotation;
 
+        CircuitManager.instance.AddRoad(obj);
+
         m_ParentObj.SetActive(false);
     }
 }
