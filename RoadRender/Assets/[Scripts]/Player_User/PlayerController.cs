@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        m_CameraTrans.rotation = new Quaternion(0, 0, 0, 0);
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+
     }
 
     public void MoveDirection(InputAction.CallbackContext context)
@@ -32,7 +37,9 @@ public class PlayerController : MonoBehaviour
         CameraRotation();
 
     }
-
+    /// <summary>
+    /// This function handles the 3d movement of the player/user
+    /// </summary>
     private void Movement()
     {
         float xDir = m_Direction.x * m_Speed * Time.fixedDeltaTime;
@@ -44,6 +51,9 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.up * zDir, Space.Self);
     }
 
+    /// <summary>
+    /// this function handles the rotation of the camera and the body
+    /// </summary>
     private void CameraRotation()
     {
         float xMouse = m_MouseDirection.x * m_MouseSensitivity * Time.fixedDeltaTime;
@@ -53,6 +63,10 @@ public class PlayerController : MonoBehaviour
         m_CameraTrans.Rotate(Vector3.left * yMouse, Space.Self);
     }
 
+    /// <summary>
+    /// this input event adds/decreases on basis of an Axis input (which are "-" & "+" right now)
+    /// </summary>
+    /// <param name="context"></param>
     public void AddMoveSpeed(InputAction.CallbackContext context)
     {
         if (!context.performed) 

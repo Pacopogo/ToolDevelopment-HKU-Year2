@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2986760462360800374}
+  - component: {fileID: 4822926289941498101}
   m_Layer: 0
   m_Name: RoadRight
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 8372420974190115702}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4822926289941498101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303775638177640925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a193f82d4ddf84ebbdd995ab0e5233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MeshFilter: {fileID: 3866089526385516730}
 --- !u!1 &4480503336096343050
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,9 +112,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1418106222229866039, guid: 4d55f4bd216b30b4a83b16ffa86d66eb, type: 3}
-  - {fileID: 4218046369211427024, guid: 4d55f4bd216b30b4a83b16ffa86d66eb, type: 3}
-  - {fileID: -7015027346690320248, guid: 4d55f4bd216b30b4a83b16ffa86d66eb, type: 3}
+  - {fileID: 2100000, guid: 9b3dad784d3221c4187f581051d032eb, type: 2}
+  - {fileID: 2100000, guid: 86c3d14f7726bb34fb5574a495bca66c, type: 2}
+  - {fileID: 2100000, guid: 3621137667f18584fb1be0bf028d0923, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -5,9 +5,7 @@ public class PlayerPlacer : MonoBehaviour
 {
     [SerializeField] private LayerMask InteracitonLayer;
 
-    private void FixedUpdate()
-    {
-    }
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         RaycastHit hit;
