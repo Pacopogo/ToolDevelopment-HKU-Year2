@@ -393,6 +393,53 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &534705064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534705065}
+  - component: {fileID: 534705066}
+  m_Layer: 0
+  m_Name: '[SaveManager]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &534705065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534705064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534705066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534705064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdadcddc13e8af43aaa900f3daa129d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: C:/_School/_School 2025-2026/ToolDevelopment/ToolDevelopment-HKU-Year2/RoadRender/Assets/SaveFolder/HalloTest.json
+  filename: SaveFolder/HalloTest
+  circuitManager: {fileID: 1646877142}
 --- !u!1 &571239738
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,18 +893,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1942990355342748238, guid: 1cd01e8f7a45f744687d2bb42ae3d43b, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: -1418106222229866039, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
-    - target: {fileID: 1942990355342748238, guid: 1cd01e8f7a45f744687d2bb42ae3d43b, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 4218046369211427024, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
-    - target: {fileID: 1942990355342748238, guid: 1cd01e8f7a45f744687d2bb42ae3d43b, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: -7015027346690320248, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
     - target: {fileID: 5104943811873139507, guid: 1cd01e8f7a45f744687d2bb42ae3d43b, type: 3}
       propertyPath: m_Name
       value: 'Road[Start]'
@@ -893,7 +928,7 @@ Transform:
   m_GameObject: {fileID: 1646877140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.157594, y: -6.531104, z: 11.488033}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -911,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2c27572647f4e4c8444b308d94c441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Roads:
+  <Roads>k__BackingField:
   - {fileID: 1721091827}
   m_TargetMesh: {fileID: 1877841348}
 --- !u!1 &1721091827 stripped
@@ -1084,6 +1119,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 534705065}
   - {fileID: 1646877141}
   - {fileID: 1877841349}
   - {fileID: 571239739}

@@ -1,0 +1,31 @@
+{
+    "m_RoadData": [
+        {
+            "name": "Road[Start]",
+            "m_Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "m_Roadtype": 0
+        },
+        {
+            "name": "RoadForward(Clone)",
+            "m_Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 10.0
+            },
+            "m_Roadtype": 0
+        },
+        {
+            "name": "RoadForward(Clone)",
+            "m_Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 20.0
+            },
+            "m_Roadtype": 0
+        }
+    ]
+}

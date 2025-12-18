@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 567398896215086934}
   - component: {fileID: -6843265779563495760}
+  - component: {fileID: 8925320602744376588}
   m_Layer: 0
   m_Name: 'Road[Start]'
   m_TagString: Untagged
@@ -48,6 +49,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MeshFilter: {fileID: 4377563905827964693}
+--- !u!114 &8925320602744376588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104943811873139507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ba73eff1bd59242b18198f20610b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: yes its a bit of text
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Roadtype: 0
 --- !u!1 &8180966815800813889
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,9 +131,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9b3dad784d3221c4187f581051d032eb, type: 2}
-  - {fileID: 2100000, guid: 86c3d14f7726bb34fb5574a495bca66c, type: 2}
-  - {fileID: 2100000, guid: 3621137667f18584fb1be0bf028d0923, type: 2}
+  - {fileID: -1418106222229866039, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
+  - {fileID: 4218046369211427024, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
+  - {fileID: -7015027346690320248, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

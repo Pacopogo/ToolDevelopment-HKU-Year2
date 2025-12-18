@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class CircuitManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> m_Roads;
+    [field:SerializeField] public List<GameObject> Roads { get; private set; } = new List<GameObject>();
     private List<MeshFilter> m_Meshes = new List<MeshFilter>();
 
     [SerializeField] private MeshFilter m_TargetMesh;
@@ -20,7 +20,7 @@ public class CircuitManager : MonoBehaviour
 
     public void AddRoad(GameObject obj)
     {
-        m_Roads.Add(obj);
+        Roads.Add(obj);
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ public class CircuitManager : MonoBehaviour
     [ContextMenu("Remove last")]
     public void RemoveLastRoad()
     {
-        m_Roads.Remove(m_Roads[m_Roads.Count - 1]);
+        Roads.Remove(Roads[Roads.Count - 1]);
     }
 
     /// <summary>
@@ -38,16 +38,15 @@ public class CircuitManager : MonoBehaviour
     [ContextMenu("CLEAR")]
     public void ClearRoads()
     {
-        m_Roads.Clear();
+        Roads.Clear();
     }
 
     [ContextMenu("Make Mesh")]
     public void CombineMesh()
     {
-        //Add the mesh combinder here
-        var combine = new CombineInstance[m_Roads.Count];
+        var combine = new CombineInstance[Roads.Count];
 
-        foreach(GameObject obj in m_Roads)
+        foreach(GameObject obj in Roads)
         {
             MeshFilterObject meshObj = obj.GetComponent<MeshFilterObject>();
             m_Meshes.Add(meshObj.GetFilter());
@@ -55,6 +54,7 @@ public class CircuitManager : MonoBehaviour
 
         for (int i = 0; i < m_Meshes.Count; i++)
         {
+            
             combine[i].mesh = m_Meshes[i].sharedMesh;
             combine[i].transform = m_Meshes[i].transform.localToWorldMatrix;
         }
