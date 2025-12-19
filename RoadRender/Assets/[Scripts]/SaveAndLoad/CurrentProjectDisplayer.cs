@@ -13,15 +13,16 @@ public class CurrentProjectDisplayer : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown dropdown;
 
-    public ProjectData projectData;
-
     [Header("Display Components")]
     [SerializeField] private TMP_Text nameText;
     
     public void GetProject()
     {
-        projectData = FileHandler.LoadJson<ProjectData>(dropdown.options[dropdown.value].text);
-        Debug.Log(projectData.Name);
-        nameText.text = projectData.Name;   
+
+    }
+
+    public void SetProject()
+    {
+       SceneTransferData.instance.ProjectName = nameText.text;
     }
 }

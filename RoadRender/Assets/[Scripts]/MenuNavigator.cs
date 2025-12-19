@@ -1,4 +1,6 @@
 using System.Diagnostics;
+using System.IO;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +10,11 @@ using UnityEngine;
 /// </summary>
 public class MenuNavigator : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     public void OpenSaveFolder() {
 #if UNITY_EDITOR
         EditorUtility.RevealInFinder(Application.persistentDataPath + "/" + Application.productName);

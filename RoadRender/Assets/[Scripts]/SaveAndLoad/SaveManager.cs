@@ -11,8 +11,15 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private CircuitManager circuitManager;
     public SaveData data;
 
+
     [SerializeField] private UnityEvent OnSave;
     [SerializeField] private UnityEvent OnLoad;
+
+    private void Start()
+    {
+        filename = SceneTransferData.instance.ProjectName;
+
+    }
 
     [ContextMenu("Save")]
     public void Save()
@@ -43,7 +50,7 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            path = Application.persistentDataPath + "/SaveFolder/" + filename + ".json";
+            path = Application.persistentDataPath + "/" + filename + ".json";
         }
 
         FileStream fileStream = new FileStream(path, FileMode.Create);
@@ -66,7 +73,7 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            path = Application.persistentDataPath + "/SaveFolder/" + filename + ".json";
+            path = Application.persistentDataPath + "/" + filename + ".json";
         }
 
         FileStream fileStream = new FileStream(path, FileMode.Open);

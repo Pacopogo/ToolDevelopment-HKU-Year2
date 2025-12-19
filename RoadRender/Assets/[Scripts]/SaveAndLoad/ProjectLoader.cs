@@ -7,6 +7,8 @@ public class ProjectLoader : MonoBehaviour
     [SerializeField] private SaveManager m_SaveManager;
     private SaveData m_SaveData;
 
+    [SerializeField] private bool loadingProject = false;
+
     public List<RoadData> RoadDatas;
 
     [Header("Prefabs")]
@@ -15,6 +17,14 @@ public class ProjectLoader : MonoBehaviour
     [SerializeField] private GameObject m_RoadRight;
     [SerializeField] private GameObject m_RoadUp;
     [SerializeField] private GameObject m_RoadDown;
+
+    private void Start()
+    {
+        if (loadingProject)
+        {
+            LoadProject();
+        }
+    }
 
     [ContextMenu("PLACE PROJECT")]
     public void LoadProject()
