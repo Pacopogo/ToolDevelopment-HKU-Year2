@@ -7,8 +7,8 @@ public class PlacerRemover : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Hit");
-        if (!collision.gameObject.GetComponent<CarSpawner>())
-            return;
+        //if (!collision.gameObject.GetComponent<CarSpawner>())
+        //    return;
 
         m_PlacerObj.SetActive(false);
 

@@ -62,6 +62,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: yes its a bit of text
   m_Position: {x: 0, y: 0, z: 0}
+  x: 0
+  y: 0
+  z: 0
   m_Roadtype: 2
 --- !u!1 &4480503336096343050
 GameObject:
@@ -75,6 +78,7 @@ GameObject:
   - component: {fileID: 3866089526385516730}
   - component: {fileID: 2736879676143845415}
   - component: {fileID: 7894561261202265229}
+  - component: {fileID: 8756495259257304524}
   m_Layer: 0
   m_Name: Road_Right
   m_TagString: Untagged
@@ -174,6 +178,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8443111144904439539, guid: 07aea1cf575aedb4685488f03cc2f896, type: 3}
+--- !u!54 &8756495259257304524
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480503336096343050}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &6658286485953546263
 PrefabInstance:
   m_ObjectHideFlags: 0

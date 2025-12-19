@@ -16,18 +16,21 @@ public class ProjectLoader : MonoBehaviour
     [SerializeField] private GameObject m_RoadUp;
     [SerializeField] private GameObject m_RoadDown;
 
+    [ContextMenu("PLACE PROJECT")]
     public void LoadProject()
     {
+        m_SaveManager.Load();
+
         m_SaveData = m_SaveManager.GetLoadData();
 
-        foreach(var road in m_SaveData.m_RoadData)
+        foreach (var road in m_SaveData.m_RoadData)
         {
             RoadDatas.Add(road);
 
             PlaceRoadFromData(
                 road.m_Roadtype,
                 road.m_Position,
-                road.m_Rotation
+                new Vector3(road.x, road.y, road.z)
                 );
         }
     }
@@ -35,6 +38,7 @@ public class ProjectLoader : MonoBehaviour
     public void PlaceRoadFromData(RoadDirection type, Vector3 pos, Vector3 rot)
     {
         GameObject roadObj = null;
+        GameObject tempObj;
 
         switch (type)
         {
@@ -57,6 +61,12 @@ public class ProjectLoader : MonoBehaviour
                 break;
         }
 
-        Instantiate(roadObj);
+        tempObj = Instantiate(roadObj);
+        tempObj.transform.position = pos;
+        tempObj.transform.rotation = new Quaternion(rot.x, rot.y, rot.z, 0);
+
+        CircuitManager.instance.AddRoad(tempObj);
+
+        Debug.Log(rot);
     }
 }

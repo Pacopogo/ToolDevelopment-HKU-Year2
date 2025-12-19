@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7625837861538262628}
   - component: {fileID: 1320562949402617177}
   - component: {fileID: 594612470817620942}
+  - component: {fileID: 8207334720172162400}
   m_Layer: 0
   m_Name: Road_RAMP
   m_TagString: Untagged
@@ -111,6 +112,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1868657341491881780, guid: 9b5d463088cc8ec49a747322d5ecfa62, type: 3}
+--- !u!54 &8207334720172162400
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682015418651166927}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7302923248628225402
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: yes its a bit of text
   m_Position: {x: 0, y: 0, z: 0}
+  x: 0
+  y: 0
+  z: 0
   m_Roadtype: 3
 --- !u!1001 &2718459143601359149
 PrefabInstance:

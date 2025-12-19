@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.Events;
 public class SaveManager : MonoBehaviour
@@ -29,7 +28,9 @@ public class SaveManager : MonoBehaviour
             RoadData data = new RoadData()
             {
                 m_Position = road.m_Position,
-                m_Rotation = road.m_Rotation,
+                x = road.x,
+                y = road.y,
+                z = road.z,
                 m_Roadtype = road.m_Roadtype,
                 name = road.name
             };
@@ -61,11 +62,11 @@ public class SaveManager : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            path = Application.dataPath + "/" + filename + ".json";
+            path = Application.dataPath + "/SaveFolder/" + filename + ".json";
         }
         else
         {
-            path = Application.persistentDataPath + "/" + filename + ".json";
+            path = Application.persistentDataPath + "/SaveFolder/" + filename + ".json";
         }
 
         FileStream fileStream = new FileStream(path, FileMode.Open);
@@ -100,6 +101,6 @@ public class RoadData
 {
     public string name = "MyProject";
     public Vector3 m_Position;
-    public Vector3 m_Rotation;
+    public float x,y,z;
     public RoadDirection m_Roadtype;
 }
