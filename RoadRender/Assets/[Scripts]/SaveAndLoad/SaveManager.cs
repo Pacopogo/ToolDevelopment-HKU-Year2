@@ -4,22 +4,32 @@ using System.IO;
 using System.Linq;
 using UnityEditor.Overlays;
 using UnityEngine;
+using UnityEngine.Events;
 public class SaveManager : MonoBehaviour
 {
     [SerializeField] private string path;   //To save path
     [SerializeField] private string filename;
     [SerializeField] private CircuitManager circuitManager;
     public SaveData data;
+
+    [SerializeField] private UnityEvent OnSave;
+    [SerializeField] private UnityEvent OnLoad;
+
     [ContextMenu("Save")]
     public void Save()
     {
+        Debug.Log("SAVING");
+
         SaveData saveData = new SaveData();
         saveData.m_RoadData = new List<RoadData>();
         var roads = circuitManager.Roads.Select(x => x.GetComponent<RoadDataComponent>());
+
+        //When adding new types to the Road data add them here too
         foreach (var road in roads) {
             RoadData data = new RoadData()
             {
                 m_Position = road.m_Position,
+                m_Rotation = road.m_Rotation,
                 m_Roadtype = road.m_Roadtype,
                 name = road.name
             };
@@ -28,11 +38,11 @@ public class SaveManager : MonoBehaviour
 
         if (Application.isEditor)
         {
-            path = Application.dataPath + "/" + filename + ".json";
+            path = Application.dataPath + "/SaveFolder/" + filename + ".json";
         }
         else
         {
-            path = Application.persistentDataPath + "/" + filename + ".json";
+            path = Application.persistentDataPath + "/SaveFolder/" + filename + ".json";
         }
 
         FileStream fileStream = new FileStream(path, FileMode.Create);
@@ -42,6 +52,8 @@ public class SaveManager : MonoBehaviour
             string json = JsonUtility.ToJson(saveData, true);
             writer.Write(json);
         }
+
+        OnSave?.Invoke();
     }
     
     [ContextMenu("Load")]
@@ -64,33 +76,17 @@ public class SaveManager : MonoBehaviour
         }
         data = JsonUtility.FromJson<SaveData>(json);
 
+        OnLoad?.Invoke();
     }
 
-    public static T[] FromJson<T>(string json)
+    public SaveData GetLoadData()
     {
-        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
-        return wrapper.Items;
+        if (data == null)
+            Load();
+
+        return data;
     }
 
-    public static string ToJson<T>(T[] array)
-    {
-        Wrapper<T> wrapper = new Wrapper<T>();
-        wrapper.Items = array;
-        return JsonUtility.ToJson(wrapper);
-    }
-
-    public static string ToJson<T>(T[] array, bool prettyPrint)
-    {
-        Wrapper<T> wrapper = new Wrapper<T>();
-        wrapper.Items = array;
-        return JsonUtility.ToJson(wrapper, prettyPrint);
-    }
-
-    [Serializable]
-    private class Wrapper<T>
-    {
-        public T[] Items;
-    }
 }
 
 [System.Serializable]
@@ -102,7 +98,8 @@ public class SaveData
 [System.Serializable]
 public class RoadData
 {
-    public string name = "yes its a bit of text";
+    public string name = "MyProject";
     public Vector3 m_Position;
+    public Vector3 m_Rotation;
     public RoadDirection m_Roadtype;
 }

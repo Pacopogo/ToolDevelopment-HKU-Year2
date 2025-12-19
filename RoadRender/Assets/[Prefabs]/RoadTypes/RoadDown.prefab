@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588524197904164478}
   - component: {fileID: -204368882602918994}
+  - component: {fileID: -3557706477393582121}
   m_Layer: 0
   m_Name: RoadDown
   m_TagString: Untagged
@@ -158,6 +159,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MeshFilter: {fileID: 1633356743926500144}
+--- !u!114 &-3557706477393582121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031558776166441981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ba73eff1bd59242b18198f20610b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: yes its a bit of text
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Roadtype: 4
 --- !u!1001 &3712756417325097665
 PrefabInstance:
   m_ObjectHideFlags: 0
