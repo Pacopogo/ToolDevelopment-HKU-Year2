@@ -73,8 +73,7 @@ public class ProjectLoader : MonoBehaviour
 
         tempObj = Instantiate(roadObj);
         tempObj.transform.position = pos;
-        tempObj.transform.rotation = new Quaternion(rot.x, rot.y, rot.z, 0);
-
+        tempObj.transform.Rotate(rot);
         CircuitManager.instance.AddRoad(tempObj);
 
         Debug.Log(rot);

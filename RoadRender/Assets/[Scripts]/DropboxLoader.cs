@@ -23,6 +23,7 @@ public class DropboxLoader : MonoBehaviour
         foreach (var item in projectCreator.projectlist.Projects)
         {
             optionData.text = item;
+            Debug.Log(item);
             dropDown.options.Add(optionData);
         }
     }
