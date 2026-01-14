@@ -66,4 +66,11 @@ public class CircuitManager : MonoBehaviour
         m_TargetMesh.mesh = mesh;
 
     }
+    [ContextMenu("Export")]
+    public void ExportMesh()
+    {
+        if (m_TargetMesh == null)
+            CombineMesh();
+
+    }
 }
