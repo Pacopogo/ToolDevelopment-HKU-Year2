@@ -19,6 +19,8 @@ public class MenuNavigator : MonoBehaviour
 #if UNITY_EDITOR
         EditorUtility.RevealInFinder(Application.persistentDataPath + "/" + Application.productName);
 #endif
+        Application.OpenURL(Application.persistentDataPath);
+
     }
     public void CloseApp() => Application.Quit();
 }

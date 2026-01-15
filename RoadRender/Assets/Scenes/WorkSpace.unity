@@ -548,7 +548,6 @@ MonoBehaviour:
   <Roads>k__BackingField:
   - {fileID: 1721091827}
   m_Exporter: {fileID: 1646877143}
-  m_Objects: []
   m_TargetMesh: {fileID: 1877841348}
 --- !u!114 &1646877143
 MonoBehaviour:
@@ -713,6 +712,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1877841345}
+    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1646877142}
+    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExportMesh
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

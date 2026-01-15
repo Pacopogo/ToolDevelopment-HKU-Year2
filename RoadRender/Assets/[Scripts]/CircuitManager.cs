@@ -8,7 +8,6 @@ public class CircuitManager : MonoBehaviour
     private List<MeshFilter> m_Meshes = new List<MeshFilter>();
 
     [SerializeField] private ExportInProject m_Exporter;
-    [SerializeField] private List<GameObject> m_Objects = new List<GameObject>();
 
     [SerializeField] private MeshFilter m_TargetMesh;
 
@@ -78,15 +77,19 @@ public class CircuitManager : MonoBehaviour
         CombineMesh();
 
         string path;
+        string filename = SceneTransferData.instance.ProjectName;
+
+
+        Debug.Log("EXPORTING: " + filename);
 
         //The file path to OBJ
         if (Application.isEditor)
         {
-            path = Application.dataPath + "/SaveFolder/" + "Default" + ".obj";
+            path = Application.dataPath + "/SaveFolder/" + filename + ".obj";
         }
         else
         {
-            path = Application.persistentDataPath + "/" + "Default" + ".obj";
+            path = Application.persistentDataPath + "/" + filename + ".obj";
         }
 
         m_Exporter.ExportObject(m_TargetMesh.gameObject, path);

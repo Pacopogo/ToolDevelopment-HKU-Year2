@@ -3,7 +3,6 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading;
-using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -57,25 +56,7 @@ public class ExportInProject : MonoBehaviour
         Thread.CurrentThread.CurrentCulture = previousCurrentCulture;
     }
 
-    public void ExportObjects(List<GameObject> objList, string writePath)
-    {
-        ApplyObjTransformations = false;
-
-        GameObject[] objs = objList.ToArray();
-
-        if (objs.Length < 1)
-        {
-            Debug.Log("No object selected.");
-            return;
-        }
-        string directory = EditorUtility.SaveFolderPanel("Export OBJs to", writePath, "OBJFiles");
-        writePath = directory;
-
-        foreach (GameObject obj in objs)
-        {
-            ExportObject(obj, Path.Combine(directory, obj.name + ".obj"));
-        }
-    }
+   
     public static string GetMeshOBJ(string name, Mesh mesh, Matrix4x4 objTransform)
     {
         StringBuilder sb = new StringBuilder();

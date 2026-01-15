@@ -290,7 +290,6 @@ MonoBehaviour:
   circuitManager: {fileID: 1646877142}
   data:
     m_RoadData: []
-  sceneTransferData: {fileID: 11400000, guid: c39a6d8d793bb884e86a0c867794ef20, type: 2}
   OnSave:
     m_PersistentCalls:
       m_Calls:
@@ -322,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SaveManager: {fileID: 534705066}
+  loadingProject: 0
   RoadDatas: []
   m_RoadForward: {fileID: 4204226114259273439, guid: 9b46d62b3c3916348ae5dbb1a2f353e1, type: 3}
   m_RoadLeft: {fileID: 4102972871011226711, guid: e960c53d28d04df49b7d2864649e215a, type: 3}
@@ -474,6 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646877141}
   - component: {fileID: 1646877142}
+  - component: {fileID: 1646877143}
   m_Layer: 0
   m_Name: '[CircuitManager]'
   m_TagString: Untagged
@@ -510,7 +511,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Roads>k__BackingField:
   - {fileID: 1721091827}
+  m_Exporter: {fileID: 1646877143}
   m_TargetMesh: {fileID: 1877841348}
+--- !u!114 &1646877143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646877140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3ebfb095bfd1b43861ade1aed84721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1721091827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5104943811873139507, guid: 1cd01e8f7a45f744687d2bb42ae3d43b, type: 3}
@@ -655,43 +669,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
       propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 534705066}
     - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_ActionEvents.Array.data[23].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1989211896}
-    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Save
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.Animator, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856611254069644507, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Saving
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1646877142}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
---- !u!95 &1989211896 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1092650943625564954, guid: aeb6122021c6107409c972619ab53bf3, type: 3}
-  m_PrefabInstance: {fileID: 1989211895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
