@@ -89,6 +89,8 @@ public static class ExportMeshToOBJ
 
     private static string PreviousSelectedDirectory = "";
 
+
+    //start here
     [MenuItem("GameObject/Export to OBJ")]
     static void ExportToOBJ()
     {
