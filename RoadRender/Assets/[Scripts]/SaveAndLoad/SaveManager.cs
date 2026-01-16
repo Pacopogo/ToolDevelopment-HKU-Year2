@@ -31,7 +31,8 @@ public class SaveManager : MonoBehaviour
         var roads = circuitManager.Roads.Select(x => x.GetComponent<RoadDataComponent>());
 
         //When adding new types to the Road data add them here too
-        foreach (var road in roads) {
+        foreach (var road in roads)
+        {
             RoadData data = new RoadData()
             {
                 m_Position = road.m_Position,
@@ -63,7 +64,7 @@ public class SaveManager : MonoBehaviour
 
         OnSave?.Invoke();
     }
-    
+
     [ContextMenu("Load")]
     public void Load()
     {
@@ -108,6 +109,6 @@ public class RoadData
 {
     public string name = "MyProject";
     public Vector3 m_Position;
-    public float x,y,z;
+    public float x, y, z;
     public RoadDirection m_Roadtype;
 }

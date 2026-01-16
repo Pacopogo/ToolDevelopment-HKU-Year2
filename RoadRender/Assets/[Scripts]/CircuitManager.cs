@@ -94,4 +94,16 @@ public class CircuitManager : MonoBehaviour
 
         m_Exporter.ExportObject(m_TargetMesh.gameObject, path);
     }
+
+    [ContextMenu("Undo last road")]
+    public void UndoRoad()
+    {
+        if (Roads.Count <= 1)
+            return;
+
+        Destroy(Roads[Roads.Count - 1]);
+        RemoveLastRoad();
+
+        Roads[Roads.Count - 1].GetComponent<PlacerRemover>().CheckIfLast();
+    }
 }

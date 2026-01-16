@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 6588524197904164478}
   - component: {fileID: -204368882602918994}
   - component: {fileID: -3557706477393582121}
+  - component: {fileID: 8158522208769881840}
   m_Layer: 0
   m_Name: RoadDown
   m_TagString: Untagged
@@ -205,6 +206,19 @@ MonoBehaviour:
   y: 0
   z: 0
   m_Roadtype: 4
+--- !u!114 &8158522208769881840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031558776166441981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dd8ba763d4f2245bd8d2da9fe53d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_placerObj: {fileID: 3384576196267809159}
 --- !u!1001 &3712756417325097665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,5 +279,10 @@ PrefabInstance:
 --- !u!4 &2004225555353620896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2906559866156495713, guid: 341343e7f18e3d04ca439dbe8442b223, type: 3}
+  m_PrefabInstance: {fileID: 3712756417325097665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3384576196267809159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2125191411161627462, guid: 341343e7f18e3d04ca439dbe8442b223, type: 3}
   m_PrefabInstance: {fileID: 3712756417325097665}
   m_PrefabAsset: {fileID: 0}

@@ -12,6 +12,7 @@ public class DropboxLoader : MonoBehaviour
 
     private void Start()
     {
+        dropDown.ClearOptions();
         LoadOptions();
     }
 
@@ -22,9 +23,13 @@ public class DropboxLoader : MonoBehaviour
 
         foreach (var item in projectCreator.projectlist.Projects)
         {
-            optionData.text = item;
+            TMP_Dropdown.OptionData option;
+            option = new TMP_Dropdown.OptionData();
+            
+            option.text = item;
+
             Debug.Log(item);
-            dropDown.options.Add(optionData);
+            dropDown.options.Add(option);
         }
 
 

@@ -6,6 +6,8 @@ public class SceneTransferData : MonoBehaviour
 
     public string ProjectName;
 
+    public float mouseSensitivity = 10;
+
     void Awake()
     {
         if (instance == null)
@@ -19,5 +21,16 @@ public class SceneTransferData : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetMouseSensitivity(float amount)
+    {
+        if (mouseSensitivity <= 0)
+        {
+            mouseSensitivity = 0;
+            return;
+        }
+
+        mouseSensitivity += amount;
     }
 }

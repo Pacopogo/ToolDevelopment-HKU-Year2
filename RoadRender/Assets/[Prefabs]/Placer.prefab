@@ -81,7 +81,6 @@ GameObject:
   - component: {fileID: 2768146022049020217}
   - component: {fileID: 6434854319711585907}
   - component: {fileID: 6841442167665513875}
-  - component: {fileID: 4579765729387667264}
   - component: {fileID: 8147521130982804243}
   m_Layer: 6
   m_Name: UP
@@ -195,22 +194,23 @@ MonoBehaviour:
   m_DirectionData: {fileID: 11400000, guid: 6fe56af3f951cb54784a8aa5365276d8, type: 2}
   m_PlacePoint: {fileID: 1808918593927519818}
   m_ParentObj: {fileID: 2125191411161627462}
---- !u!114 &4579765729387667264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3729864976972198549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dd8ba763d4f2245bd8d2da9fe53d95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlacerObj: {fileID: 2125191411161627462}
-  m_Layer:
-    serializedVersion: 2
-    m_Bits: 128
+  m_InputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d7065ebd-b88f-4336-9852-78285e6e203b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e1af5979-a215-423e-945a-8785191c3740
+      m_Path: <Keyboard>/pageUp
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    m_Flags: 0
 --- !u!54 &8147521130982804243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -368,6 +368,23 @@ MonoBehaviour:
   m_DirectionData: {fileID: 11400000, guid: a022761d230286a4589551959194f84d, type: 2}
   m_PlacePoint: {fileID: 1808918593927519818}
   m_ParentObj: {fileID: 2125191411161627462}
+  m_InputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d7065ebd-b88f-4336-9852-78285e6e203b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e1af5979-a215-423e-945a-8785191c3740
+      m_Path: <Keyboard>/pageDown
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &7395563012194992444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,6 +515,23 @@ MonoBehaviour:
   m_DirectionData: {fileID: 11400000, guid: 914a69e9c52d8c14daa4b79b6cbe6b50, type: 2}
   m_PlacePoint: {fileID: 1808918593927519818}
   m_ParentObj: {fileID: 2125191411161627462}
+  m_InputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 69c674be-d139-45ca-9eb6-bbea93ed5fa1
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c88bb333-f725-409e-b28e-1a366001c6d4
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &8702402524064359864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +657,23 @@ MonoBehaviour:
   m_DirectionData: {fileID: 11400000, guid: 07644c282fb10234084309dfae5b0c56, type: 2}
   m_PlacePoint: {fileID: 1808918593927519818}
   m_ParentObj: {fileID: 2125191411161627462}
+  m_InputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d7065ebd-b88f-4336-9852-78285e6e203b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e1af5979-a215-423e-945a-8785191c3740
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    m_Flags: 0
 --- !u!4 &9173724141171032659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cc37318d76cce24eadde532ecb33d21, type: 3}
@@ -753,6 +804,23 @@ MonoBehaviour:
   m_DirectionData: {fileID: 11400000, guid: 09680f5dba1a7ea4fa4541bd5d14831b, type: 2}
   m_PlacePoint: {fileID: 1808918593927519818}
   m_ParentObj: {fileID: 2125191411161627462}
+  m_InputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d7065ebd-b88f-4336-9852-78285e6e203b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e1af5979-a215-423e-945a-8785191c3740
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    m_Flags: 0
 --- !u!4 &8691536258664839860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cc37318d76cce24eadde532ecb33d21, type: 3}

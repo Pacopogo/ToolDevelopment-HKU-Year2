@@ -4,12 +4,16 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Script that exports meshes as OBJ's
 /// </summary>
 public class ExportInProject : MonoBehaviour
 {
+
+    [SerializeField] private UnityEvent OnExport;
+
     public static bool ApplyObjTransformations = true;
 
     /// <summary>
@@ -47,6 +51,7 @@ public class ExportInProject : MonoBehaviour
             // this is why the OBJ's were messed up, my CultureInfo formats floats with ',' instead of '.' which is what OBJ uses.
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             writer.Write(GetMeshOBJ(obj.name, meshFilter.sharedMesh, ApplyObjTransformations ? obj.transform.localToWorldMatrix : Matrix4x4.identity));
+            OnExport?.Invoke();
         }
         catch (System.Exception e)
         {
